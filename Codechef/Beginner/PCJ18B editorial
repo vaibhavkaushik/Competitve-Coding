@@ -1,0 +1,33 @@
+PROBLEM:
+Given an N \times NN×N chessboard, find out the number of squares with odd length.
+
+QUICK EXPLANATION
+The answer is \displaystyle\sum_{i = 0}^{\lfloor\frac{N}{2}\rfloor} {(N-2i)^2} 
+i=0
+∑
+⌊ 
+2
+N
+​	
+ ⌋
+​	
+ (N−2i) 
+2
+ 
+
+EXPLANATION:
+For an example, let us take a chessboard of size 8 \times 88×8.
+
+We take a horizontal rod of size 55 and try to slide it through the chessboard from left to right.
+It can take the column numbers 1 \text{ to } 51 to 5, 2 \text{ to } 62 to 6, 3 \text{ to } 73 to 7 and 4 \text{ to } 84 to 8.
+
+For a horizontal rod of size 4, it can take the columns 1 \text{ to } 41 to 4, 2 \text{ to } 52 to 5, 3 \text{ to } 63 to 6, 4 \text{ to } 74 to 7 and 5 \text{ to } 85 to 8.
+
+From the above examples, we can infer that we can fit N - i + 1N−i+1 rods of length ii in an N \times NN×N chessboard horizontally. Similarly, we can fit the same number of rods in the chessboard vertically, since it is a square and is symmetric.
+
+If we consider these rods as the sides of the square of side ii, we have N - i + 1N−i+1 horizontal and vertical choices each. So, the number of squares of length ii in a N \times NN×N chessboard is (N - i + 1)^2(N−i+1) 
+2
+ .
+
+Using this formula, we can replace i = 1, 3, 5….i=1,3,5…. as the side length of the square and add them up. This gives us for i=0 to [N/2] find (N-2i)^2.
+ .
